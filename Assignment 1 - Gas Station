@@ -1,0 +1,75 @@
+//
+//  main.cpp
+//  SampleProject
+//
+//  Created by Samuel Brooks on 2/26/24.
+//
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    
+    //Initializing variables
+    char gas;
+    int quantity;
+    int payment;
+    double price;
+    double salesTax = 1.095;
+    double subtotal;
+    double total;
+    
+    // Menu
+    cout<<"-----------Welcome to Gas 4 Taxes-------------"<<endl;
+    cout<<"|        Gas Type       |       Price         |"<<endl;
+    cout<<"----------------------------------------------"<<endl;
+    cout<<"|       (R)egular        |       $5.02        |"<<endl;
+    cout<<"----------------------------------------------"<<endl;
+    cout<<"|       (M)idgrade       |       $5.22        |"<<endl;
+    cout<<"----------------------------------------------"<<endl;
+    cout<<"|       (P)remium        |       $5.42        |"<<endl;
+    cout<<"----------------------------------------------"<<endl;
+    cout<<"|       (D)iesel         |       $6.03        |"<<endl;
+    cout<<"----------------------------------------------"<<endl;
+    
+    //User Prompts
+    cout<<"Choose the first letter of a gas type to fill up your car:"<<endl;
+    cin >> gas;
+    gas = tolower(gas);
+    cout<<"How many gallons:";
+    cin >> quantity;
+    
+    //Checking if gas type is a valid input and determining price
+    while(true){
+        if(gas == 'r'){
+            price = 5.02;
+            break;
+        } else if (gas == 'm'){
+            price = 5.22;
+            break;
+        } else if (gas == 'p'){
+            price = 5.42;
+            break;
+        } else if (gas == 'd'){
+            price = 6.03;
+            break;
+        } else {
+            cout<<"Please input a valid gas type. Note: First letter of preffered gas type.";
+            cin >> gas;
+        }
+    }
+    //Calculate the total of the gas
+    subtotal = price * quantity;
+    total = subtotal * salesTax;
+    
+    
+    //Determine payment method
+    cout<<"How would you like to pay?(Debit Card, Credit Card, Gift Card, Cash, etc.): "<<endl;
+    cin >> payment;
+    
+    
+    //Final input with total
+    cout <<"Your total is $" << showpoint << fixed << setprecision(2) << total << ". Thank you for filling up at Gas 4 Taxes, a place to get broke!";
+    return 0;
+}
