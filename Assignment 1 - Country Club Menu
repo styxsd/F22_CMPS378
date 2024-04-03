@@ -1,0 +1,100 @@
+//
+//  main.cpp
+//  SampleProject
+//
+//  Created by Samuel Brooks on 2/26/24.
+//
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    
+    //Initializing variables
+    char meal;
+    char dessert;
+    double mealprice;
+    double dessertprice;
+    double salesTax = 1.095;
+    double subtotal;
+    double total;
+    
+    // Menu
+    cout<<"****Welcome to Discovery Bay Golf and Country Club Restaurant****"<<endl;
+    cout<<"*****************************************************************"<<endl;
+    cout<<"|        Meal            |       Price         |"<<endl;
+    cout<<"************************************************"<<endl;
+    cout<<"|Discovery Bay Burger (b)|       $15.00        |"<<endl;
+    cout<<"|Quesadilla (q)          |       $11.50        |"<<endl;
+    cout<<"|Grilled Chicken Sandwich(g)|    $15.00        |"<<endl;
+    cout<<"|Discovery Bay Clubhouse (d)|    $16.00        |"<<endl;
+   
+    cout<<"************************************************"<<endl;
+    
+    cout<<"|       Dessert          |       Price         |"<<endl;
+    cout<<"************************************************"<<endl;
+    cout<<"|Ice Cream(i)            |       $3.00         |"<<endl;
+    cout<<"|Cookies(c)              |       $3.00         |"<<endl;
+    cout<<"|Yogurt Gronola Parfait(y)|      $5.00         |"<<endl;
+    cout<<"|Pie(p)                  |       $5.00         |"<<endl;
+    cout<<"************************************************"<<endl;
+    
+    
+    
+    //User Prompts
+    cout<<"Enter a Meal you would like to order:"<<endl;
+    cin >> meal;
+    meal = tolower(meal);
+    cout<<"Enter a Dessert you would like to order:";
+    cin >> dessert;
+    
+    //Checking if meal and dessert type is a valid input and determining price
+    while(true){
+        if(meal == 'b'){
+            mealprice = 15.00;
+            break;
+        } else if (meal == 'q'){
+            mealprice = 11.50;
+            break;
+        } else if (meal == 'g'){
+            mealprice = 15.00;
+            break;
+        } else if (meal == 'd'){
+            mealprice = 16.00;
+            break;
+        } else {
+            cout<<"Please input a valid meal. Note: First letter of meal or dessert.";
+            cin >> meal;
+        }
+    }
+    
+    while(true){
+        if(dessert == 'i'){
+            dessertprice = 3.00;
+            break;
+        } else if (dessert == 'c'){
+            dessertprice = 3.00;
+            break;
+        } else if (dessert == 'y'){
+            dessertprice = 5.00;
+            break;
+        } else if (dessert == 'p'){
+            dessertprice = 5.00;
+            break;
+        } else {
+            cout<<"Please input a valid dessert. Note: First letter of meal or dessert.";
+            cin >> dessert;
+        }
+    }
+    
+    
+    //Calculate the total of the meal
+    subtotal = mealprice + dessertprice;
+    total = subtotal * salesTax;
+    
+    
+    //Final input with total
+    cout <<"Your total is $" << showpoint << fixed << setprecision(2) << total << ". Thank you for dining with us at Discovery Bay Golf and Country Club! You made Matt Padilla happy ☺";
+    return 0;
+}
