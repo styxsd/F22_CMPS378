@@ -1,0 +1,99 @@
+//
+//  main.cpp
+//  SampleProject
+//
+//  Created by Samuel Brooks on 2/26/24.
+//
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    
+    // Initializing variables
+    char meal;
+    char dessert;
+    double mealprice;
+    double dessertprice;
+    double salesTax = 1.095;
+    double subtotal;
+    double total;
+    
+    // Menu
+    cout << "****Welcome to Discovery Bay Golf and Country Club Restaurant****" << endl;
+    cout << "*****************************************************************" << endl;
+    cout << left << setw(30) << "Meal" << setw(20) << "Price" << endl;
+    cout << "************************************************" << endl;
+    cout << left << setw(30) << "Discovery Bay Burger (b)" << "$" << setw(10) << setfill(' ') << setprecision(2) << fixed << showpoint << 15.00 << endl;
+    cout << left << setw(30) << "Quesadilla (q)" << "$" << setw(10) << setfill(' ') << setprecision(2) << fixed << showpoint << 11.50 << endl;
+    cout << left << setw(30) << "Grilled Chicken Sandwich(g)" << "$" << setw(10) << setfill(' ') << setprecision(2) << fixed << showpoint << 15.00 << endl;
+    cout << left << setw(30) << "Discovery Bay Clubhouse (d)" << "$" << setw(10) << setfill(' ') << setprecision(2) << fixed << showpoint << 16.00 << endl;
+    cout << "************************************************" << endl;
+
+    cout << left << setw(30) << "Dessert" << setw(20) << "Price" << endl;
+    cout << "************************************************" << endl;
+    cout << left << setw(30) << "Ice Cream(i)" << "$" << setw(10) << setfill(' ') << setprecision(2) << fixed << showpoint << 3.00 << endl;
+    cout << left << setw(30) << "Cookies(c)" << "$" << setw(10) << setfill(' ') << setprecision(2) << fixed << showpoint << 3.00 << endl;
+    cout << left << setw(30) << "Yogurt Gronola Parfait(y)" << "$" << setw(10) << setfill(' ') << setprecision(2) << fixed << showpoint << 5.00 << endl;
+    cout << left << setw(30) << "Pie(p)" << "$" << setw(10) << setfill(' ') << setprecision(2) << fixed << showpoint << 5.00 << endl;
+    cout << "************************************************" << endl;
+    
+    // User Prompts
+    cout << "Enter a Meal you would like to order:" << endl;
+    cin >> meal;
+    meal = tolower(meal);
+    cout << "Enter a Dessert you would like to order:";
+    cin >> dessert;
+    
+    // Checking if meal and dessert type is a valid input and determining price
+    while(true){
+        if(meal == 'b'){
+            mealprice = 15.00;
+            break;
+        } else if (meal == 'q'){
+            mealprice = 11.50;
+            break;
+        } else if (meal == 'g'){
+            mealprice = 15.00;
+            break;
+        } else if (meal == 'd'){
+            mealprice = 16.00;
+            break;
+        } else {
+            cout << "Please input a valid meal. Note: First letter of meal or dessert.";
+            cin >> meal;
+        }
+    }
+    
+    while(true){
+        if(dessert == 'i'){
+            dessertprice = 3.00;
+            break;
+        } else if (dessert == 'c'){
+            dessertprice = 3.00;
+            break;
+        } else if (dessert == 'y'){
+            dessertprice = 5.00;
+            break;
+        } else if (dessert == 'p'){
+            dessertprice = 5.00;
+            break;
+        } else {
+            cout << "Please input a valid dessert. Note: First letter of meal or dessert.";
+            cin >> dessert;
+        }
+    }
+    
+    // Calculate the total of the meal
+    subtotal = mealprice + dessertprice;
+    total = subtotal * salesTax;
+    
+    // Final output with total
+    cout << left << setw(35) << setfill('.') << "Subtotal:" << right << setw(10) << setfill(' ') << "$" << fixed << setprecision(2) << subtotal << endl;
+    cout << left << setw(35) << setfill('.') << "Sales Tax (9.5%):" << right << setw(10) << setfill(' ') << "$" << (total - subtotal) << endl;
+    cout << left << setw(35) << setfill('.') << "Total:" << right << setw(10) << setfill(' ') << "$" << total << endl;
+    cout << "Thank you for dining with us at Discovery Bay Golf and Country Club! You made Matt Padilla happy ☺" << endl;
+    
+    return 0;
+}
