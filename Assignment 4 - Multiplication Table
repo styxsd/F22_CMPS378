@@ -1,0 +1,100 @@
+//
+//  main.cpp
+//  Assignment 4
+//
+//  Created by Samuel Brooks on 5/28/24.
+//
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void printMultiplicationTable(int startRangeTable, int endRangeTable, int startRangeMult, int endRangeMult) {
+    cout << "Here is the multiplication table for " << startRangeTable << " to " << endRangeTable << " in the range of " << startRangeMult << " to " << endRangeMult << endl;
+    cout << "X ";
+    for (int i = startRangeTable; i <= endRangeTable; ++i) {
+        cout << i << " ";
+    }
+    cout << endl;
+
+    for (int i = startRangeMult; i <= endRangeMult; ++i) {
+        cout << i << " ";
+        for (int j = startRangeTable; j <= endRangeTable; ++j) {
+            cout << i * j << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    string choice;
+    do {
+        int startRangeTable, endRangeTable, startRangeMult, endRangeMult;
+
+        cout << "Enter the starting range for Multiplication Table: ";
+        cin >> startRangeTable;
+        cout << "Enter the ending range for Multiplication Table: ";
+        cin >> endRangeTable;
+        cout << "Enter the starting range for multiplying the numbers in Multiplication Table: ";
+        cin >> startRangeMult;
+        cout << "Enter the ending range for multiplying the numbers in Multiplication Table: ";
+        cin >> endRangeMult;
+
+        printMultiplicationTable(startRangeTable, endRangeTable, startRangeMult, endRangeMult);
+
+        cout << "Do you want to create another multiplication table (yes/no)? ";
+        cin >> choice;
+
+    } while (choice == "yes" || choice == "Yes");
+
+    cout << "Thank you for using the multiplication table generator." << endl;
+
+    return 0;
+}
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void printMultiplicationTable(int startRangeTable, int endRangeTable, int startRangeMult, int endRangeMult) {
+    cout << "Here is the multiplication table for " << startRangeTable << " to " << endRangeTable << " in the range of " << startRangeMult << " to " << endRangeMult << endl;
+    cout << "X ";
+    for (int i = startRangeTable; i <= endRangeTable; ++i) {
+        cout << i << " ";
+    }
+    cout << endl;
+
+    for (int i = startRangeMult; i <= endRangeMult; ++i) {
+        cout << i << " ";
+        for (int j = startRangeTable; j <= endRangeTable; ++j) {
+            cout << i * j << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    string choice;
+    do {
+        int startRangeTable, endRangeTable, startRangeMult, endRangeMult;
+
+        cout << "Enter the starting range for Multiplication Table: ";
+        cin >> startRangeTable;
+        cout << "Enter the ending range for Multiplication Table: ";
+        cin >> endRangeTable;
+        cout << "Enter the starting range for multiplying the numbers in Multiplication Table: ";
+        cin >> startRangeMult;
+        cout << "Enter the ending range for multiplying the numbers in Multiplication Table: ";
+        cin >> endRangeMult;
+
+        printMultiplicationTable(startRangeTable, endRangeTable, startRangeMult, endRangeMult);
+
+        cout << "Do you want to create another multiplication table (yes/no)? ";
+        cin >> choice;
+
+    } while (choice == "yes" || choice == "Yes");
+
+    cout << "Thank you for using the multiplication table generator." << endl;
+
+    return 0;
