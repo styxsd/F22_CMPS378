@@ -1,0 +1,158 @@
+//
+//  main.cpp
+//  Midterm 3
+//
+//  Created by Samuel Brooks on 5/29/24.
+//
+
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+
+using namespace std;
+
+void performOperation(const string& op) {
+    double a, b;
+    if (op == "+") {
+        cout << "Enter two numbers: ";
+        cin >> a >> b;
+        cout << "Result: " << (a + b) << endl;
+    } else if (op == "-") {
+        cout << "Enter two numbers: ";
+        cin >> a >> b;
+        cout << "Result: " << (a - b) << endl;
+    } else if (op == "*") {
+        cout << "Enter two numbers: ";
+        cin >> a >> b;
+        cout << "Result: " << (a * b) << endl;
+    } else if (op == "/") {
+        cout << "Enter two numbers: ";
+        cin >> a >> b;
+        if (b != 0)
+            cout << "Result: " << (a / b) << endl;
+        else
+            cout << "Error: Division by zero" << endl;
+    } else if (op == "%") {
+        int x, y;
+        cout << "Enter two integers: ";
+        cin >> x >> y;
+        if (y != 0)
+            cout << "Result: " << (x % y) << endl;
+        else
+            cout << "Error: Division by zero" << endl;
+    } else if (op == "^") {
+        cout << "Enter base and exponent: ";
+        cin >> a >> b;
+        cout << "Result: " << pow(a, b) << endl;
+    } else if (op == "sin") {
+        cout << "Enter a number: ";
+        cin >> a;
+        cout << "Result: " << sin(a) << endl;
+    } else if (op == "asin") {
+        cout << "Enter a number: ";
+        cin >> a;
+        if (a >= -1 && a <= 1)
+            cout << "Result: " << asin(a) << endl;
+        else
+            cout << "Error: asin out of range" << endl;
+    } else if (op == "cos") {
+        cout << "Enter a number: ";
+        cin >> a;
+        cout << "Result: " << cos(a) << endl;
+    } else if (op == "acos") {
+        cout << "Enter a number: ";
+        cin >> a;
+        if (a >= -1 && a <= 1)
+            cout << "Result: " << acos(a) << endl;
+        else
+            cout << "Error: acos out of range" << endl;
+    } else if (op == "tan") {
+        cout << "Enter a number: ";
+        cin >> a;
+        cout << "Result: " << tan(a) << endl;
+    } else if (op == "atan") {
+        cout << "Enter a number: ";
+        cin >> a;
+        cout << "Result: " << atan(a) << endl;
+    } else if (op == "atan2") {
+        cout << "Enter two numbers: ";
+        cin >> a >> b;
+        cout << "Result: " << atan2(a, b) << endl;
+    } else if (op == "sqrt") {
+        cout << "Enter a number: ";
+        cin >> a;
+        if (a >= 0)
+            cout << "Result: " << sqrt(a) << endl;
+        else
+            cout << "Error: sqrt of negative number" << endl;
+    } else if (op == "ceil") {
+        cout << "Enter a number: ";
+        cin >> a;
+        cout << "Result: " << ceil(a) << endl;
+    } else if (op == "abs") {
+        cout << "Enter a number: ";
+        cin >> a;
+        cout << "Result: " << abs(a) << endl;
+    } else if (op == "floor") {
+        cout << "Enter a number: ";
+        cin >> a;
+        cout << "Result: " << floor(a) << endl;
+    } else if (op == "max") {
+        cout << "Enter two numbers: ";
+        cin >> a >> b;
+        cout << "Result: " << max(a, b) << endl;
+    } else if (op == "min") {
+        cout << "Enter two numbers: ";
+        cin >> a >> b;
+        cout << "Result: " << min(a, b) << endl;
+    } else if (op == "log") {
+        cout << "Enter a number: ";
+        cin >> a;
+        if (a > 0)
+            cout << "Result: " << log(a) << endl;
+        else
+            cout << "Error: log of non-positive number" << endl;
+    } else if (op == "log10") {
+        cout << "Enter a number: ";
+        cin >> a;
+        if (a > 0)
+            cout << "Result: " << log10(a) << endl;
+        else
+            cout << "Error: log10 of non-positive number" << endl;
+    } else if (op == "log2") {
+        cout << "Enter a number: ";
+        cin >> a;
+        if (a > 0)
+            cout << "Result: " << log2(a) << endl;
+        else
+            cout << "Error: log2 of non-positive number" << endl;
+    } else if (op == "round") {
+        cout << "Enter a number: ";
+        cin >> a;
+        cout << "Result: " << round(a) << endl;
+    } else {
+        cout << "Invalid operation" << endl;
+    }
+}
+
+int main() {
+    string op;
+    string tryAgain;
+
+    cout << "Welcome to Basic Math Calculator!" << endl;
+
+    do {
+        cout << "Enter the operation (+, -, *, /, %, ^, sin, asin, cos, acos, tan, atan, atan2, sqrt, ceil, abs, floor, max, min, log, log10, log2, round): ";
+        cin >> op;
+
+        performOperation(op);
+
+        cout << "Would you like to solve another problem? (Y/N): ";
+        cin >> tryAgain;
+
+    } while (tryAgain == "Y" || tryAgain == "y");
+
+    cout << "Thanks for using the Basic Math Calculator!" << endl;
+
+    return 0;
+}
