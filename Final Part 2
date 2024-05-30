@@ -1,0 +1,63 @@
+//
+//  main.cpp
+//  Final 2
+//
+//  Created by Samuel Brooks on 5/29/24.
+//
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void getInputRanges(int& baseStart, int& baseEnd, int& multStart, int& multEnd) {
+    cout << "Enter the starting range for Multiplication Table: ";
+    cin >> baseStart;
+    cout << "Enter the ending range for Multiplication Table: ";
+    cin >> baseEnd;
+    cout << "Enter the starting range for multiplying the numbers in Multiplication Table: ";
+    cin >> multStart;
+    cout << "Enter the ending range for multiplying the numbers in Multiplication Table: ";
+    cin >> multEnd;
+}
+
+void generateMultiplicationTable(int baseStart, int baseEnd, int multStart, int multEnd) {
+    cout << "Here is the multiplication table for " << baseStart << " to " << baseEnd << " in the range of " << multStart << " to " << multEnd << endl;
+    
+    // Print header row
+    cout << "X\t";
+    for (int i = baseStart; i <= baseEnd; ++i) {
+        cout << i << "\t";
+    }
+    cout << endl;
+
+    // Print table rows
+    for (int i = multStart; i <= multEnd; ++i) {
+        cout << i << "\t";
+        for (int j = baseStart; j <= baseEnd; ++j) {
+            cout << i * j << "\t";
+        }
+        cout << endl;
+    }
+}
+
+void multiplicationTable() {
+    int baseStart, baseEnd, multStart, multEnd;
+    string tryAgain;
+
+    do {
+        getInputRanges(baseStart, baseEnd, multStart, multEnd);
+        generateMultiplicationTable(baseStart, baseEnd, multStart, multEnd);
+
+        cout << "Do you want to create another multiplication table? (Y/N): ";
+        cin >> tryAgain;
+
+    } while (tryAgain == "Y" || tryAgain == "y");
+
+    cout << "Thanks for using the multiplication table generator!" << endl;
+}
+
+int main() {
+    multiplicationTable();
+    return 0;
+}
