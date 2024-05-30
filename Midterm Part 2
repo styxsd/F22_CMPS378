@@ -1,0 +1,110 @@
+//
+//  main.cpp
+//  Midterm 2
+//
+//  Created by Samuel Brooks on 5/29/24.
+//
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Function to get the meaning of the month
+string getMonthMeaning(int month) {
+    switch (month) {
+        case 1: return "Janus";
+        case 2: return "February - Month of Purification";
+        case 3: return "March - Month of Mars";
+        case 4: return "April - Month of Aphrodite";
+        case 5: return "May - Month of Maia";
+        case 6: return "June - Month of Juno";
+        case 7: return "July - Month of Julius Caesar";
+        case 8: return "August - Month of Augustus";
+        case 9: return "September - Month of Harvest";
+        case 10: return "October - Month of Eighth";
+        case 11: return "November - Month of Ninth";
+        case 12: return "December - Month of Tenth";
+        default: return "Invalid month";
+    }
+}
+
+// Function to get the meaning of the day
+string getDayMeaning(int day) {
+    switch (day) {
+        case 1: return "Self-Started";
+        case 2: return "Harmony";
+        case 3: return "Social";
+        case 4: return "Stable";
+        case 5: return "Dynamic";
+        case 6: return "Responsible";
+        case 7: return "Introspective";
+        case 8: return "Ambitious";
+        case 9: return "Humanitarian";
+        case 10: return "Leader";
+        // Add more cases for each day of the month as needed
+        default: return "Unique day";
+    }
+}
+
+// Function to get the meaning of the year
+string getYearMeaning(int year) {
+    switch (year) {
+        case 2000: return "You are a millennial";
+        case 2001: return "Year of the Snake in Chinese Zodiac";
+        case 2002: return "Year of the Horse in Chinese Zodiac";
+        case 2003: return "Year of the Goat in Chinese Zodiac";
+        case 2004: return "Year of the Monkey in Chinese Zodiac";
+        case 2005: return "Year of the Rooster in Chinese Zodiac";
+        case 2006: return "Year of the Dog in Chinese Zodiac";
+        case 2007: return "Year of the Pig in Chinese Zodiac";
+        case 2008: return "Year of the Rat in Chinese Zodiac";
+        case 2009: return "Year of the Ox in Chinese Zodiac";
+        case 2010: return "Year of the Tiger in Chinese Zodiac";
+        case 2011: return "Year of the Rabbit in Chinese Zodiac";
+        case 2012: return "Year of the Dragon in Chinese Zodiac";
+        case 2013: return "Year of the Snake in Chinese Zodiac";
+        case 2014: return "Year of the Horse in Chinese Zodiac";
+        case 2015: return "Year of the Goat in Chinese Zodiac";
+        case 2016: return "Year of the Monkey in Chinese Zodiac";
+        case 2017: return "Year of the Rooster in Chinese Zodiac";
+        case 2018: return "Year of the Dog in Chinese Zodiac";
+        case 2019: return "Year of the Pig in Chinese Zodiac";
+        case 2020: return "Year of the Rat in Chinese Zodiac";
+        case 2021: return "Year of the Ox in Chinese Zodiac";
+        case 2022: return "Year of the Tiger in Chinese Zodiac";
+        case 2023: return "Year of the Rabbit in Chinese Zodiac";
+        default: return "Invalid year";
+    }
+}
+
+int main() {
+    string tryAgain;
+    int month, day, year;
+
+    cout << "Welcome to Birthday Date Meaning Generator!" << endl;
+
+    do {
+        // Asking for user input
+        cout << "Please enter the month of your birthday (1-12): ";
+        cin >> month;
+        cout << "Please enter the day of your birthday (1-31): ";
+        cin >> day;
+        cout << "Please enter the year of your birthday (2000-2023): ";
+        cin >> year;
+
+        // Displaying the meanings
+        cout << "The month of " << month << " means " << getMonthMeaning(month) << endl;
+        cout << "The " << day << "th day means " << getDayMeaning(day) << endl;
+        cout << "The year " << year << " means " << getYearMeaning(year) << endl;
+
+        // Asking if user wants to try another one
+        cout << "Would you like to try another one? (Y/N): ";
+        cin >> tryAgain;
+
+    } while (tryAgain == "Y" || tryAgain == "y");
+
+    cout << "Thanks for playing!" << endl;
+
+    return 0;
+}
