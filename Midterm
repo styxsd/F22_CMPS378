@@ -1,0 +1,69 @@
+//
+//  main.cpp
+//  Midterm
+//
+//  Created by Samuel Brooks on 5/28/24.
+//
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+// Function to calculate BMI
+double calculateBMI(double weight, double heightInInches) {
+    return (703 * weight) / (heightInInches * heightInInches);
+}
+
+// Function to determine BMI status
+string bmiStatus(double bmi) {
+    if (bmi < 18.5) {
+        return "Underweight";
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+        return "Normal weight";
+    } else if (bmi >= 25 && bmi < 29.9) {
+        return "Overweight";
+    } else {
+        return "Obesity";
+    }
+}
+
+int main() {
+    string name, gender;
+    int age, heightFeet, heightInches;
+    double weightPounds;
+
+    // Collecting user inputs
+    cout << "Please enter your name: ";
+    getline(cin, name);
+    cout << "Please enter your age: ";
+    cin >> age;
+    cout << "Please enter your gender (male/female): ";
+    cin >> gender;
+    cout << "Please enter your height in feet: ";
+    cin >> heightFeet;
+    cout << "Please enter your height in inches: ";
+    cin >> heightInches;
+    cout << "Please enter your weight in pounds: ";
+    cin >> weightPounds;
+
+    // Converting height to inches
+    int totalHeightInches = (heightFeet * 12) + heightInches;
+
+    // Calculating BMI
+    double bmi = calculateBMI(weightPounds, totalHeightInches);
+
+    // Determining BMI status
+    string status = bmiStatus(bmi);
+
+    // Displaying the results
+    cout << fixed << setprecision(2);
+    cout << "Hi " << name << "," << endl;
+    cout << "You are a " << gender << ". You are " << age << " years old." << endl;
+    cout << "Your height is " << totalHeightInches << " inches and you currently weigh " << weightPounds << " pounds." << endl;
+    cout << "Your BMI is " << bmi << ", which is " << status << "." << endl;
+    cout << "Thank you for using the BMI Calculator!" << endl;
+
+    return 0;
+}
