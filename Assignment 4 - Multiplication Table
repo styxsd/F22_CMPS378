@@ -98,3 +98,4 @@ int main() {
     cout << "Thank you for using the multiplication table generator." << endl;
 
     return 0;
+    }
